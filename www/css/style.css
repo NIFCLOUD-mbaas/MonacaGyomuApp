@@ -1,0 +1,150 @@
+table.employeeList {
+    border-collapse: collapse;
+    text-align: center;
+	line-height: 1.2;
+    margin: 0 auto; 
+}
+table.employeeList th {
+	width: 30%;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border: 1px solid #ccc;
+}
+table.employeeList td {
+	width: 80%;
+	padding: 10px;
+	vertical-align: top;
+	border: 1px solid #ccc;
+    overflow-x: auto;
+}
+
+
+table.employee {
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0 auto; 
+}
+
+table.employee th {
+    width: 30%;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border: 1px solid #ccc;
+}
+
+table.employee td {
+    width: 80%;
+	padding: 10px;
+	vertical-align: top;
+	border: 1px solid #ccc;
+    overflow-x: auto;
+}
+
+table.employeeList tr:nth-child(n+2):hover{
+    cursor: default;
+    background: #FFFFFF;
+}
+
+table.companyList {
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0 auto; 
+}
+table.companyList th {
+	width: 30%;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border: 1px solid #ccc;
+}
+table.companyList td {
+	width: 80%;
+	padding: 10px;
+	vertical-align: top;
+	border: 1px solid #ccc;
+    overflow-x: auto;
+}
+
+
+table.company {
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0 auto; 
+}
+
+table.company th {
+    width: 30%;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border: 1px solid #ccc;
+}
+
+table.company td {
+    width: 80%;
+	padding: 10px;
+	vertical-align: top;
+	border: 1px solid #ccc;
+    overflow-x: auto;
+}
+
+table.companyList tr:nth-child(n+2):hover{
+    cursor: default;
+    background: #FFFFFF;
+}
+
+table.customerList {
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0 auto; 
+}
+table.customerList th {
+	width: 30%;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border: 1px solid #ccc;
+}
+table.customerList td {
+	width: 80%;
+	padding: 10px;
+	vertical-align: top;
+	border: 1px solid #ccc;
+    overflow-x: auto;
+}
+
+table.customerList tr:nth-child(n+2):hover{
+    cursor: default;
+    background: #FFFFFF;
+}
+
+table.editCustomerList {
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0 auto; 
+}
+table.editCustomerList th {
+    width: 30%;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border: 1px solid #ccc;
+}
+table.editCustomerList td {
+	width: 80%;
+	padding: 10px;
+	vertical-align: top;
+	border: 1px solid #ccc;
+    overflow-x: auto;
+}
+table.editCustomerList tr:nth-child(n+2):hover{
+    cursor: default;
+    background: #FFFFFF;
+}
