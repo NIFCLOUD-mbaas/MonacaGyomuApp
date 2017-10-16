@@ -1,0 +1,42 @@
+{"results":[
+	{
+		"acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "companyNumber":"10001",
+		"companyName":"○○株式会社",
+    "phoneNumber":"03-3832-9419",
+		"mainOffice":"東京都足立区千住柳町2-3-7",
+		"remarks":""
+	},
+	{
+		"acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "companyNumber":"10002",
+		"companyName":"△△株式会社",
+    "phoneNumber":"059-653-3332",
+		"mainOffice":"三重県鈴鹿市三畑町6-8-6",
+		"remarks":""
+	},
+	{
+		"acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "companyNumber":"10003",
+		"companyName":"株式会社××",
+    "phoneNumber":"0226-51-1108",
+		"mainOffice":"宮城県気仙沼市松崎地生9-11-5",
+		"remarks":""
+	},
+	{
+		"acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "companyNumber":"10004",
+		"companyName":"株式会社□□",
+    "phoneNumber":"0538-34-4059",
+		"mainOffice":"静岡県袋井市国本8-15-2",
+		"remarks":""
+	},
+	{
+		"acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "companyNumber":"10005",
+		"companyName":"◇◇株式会社",
+    "phoneNumber":"03-3187-6483",
+		"mainOffice":"東京都千代田区皇居外苑4-14-4 フリード皇居外苑 1015",
+		"remarks":""
+	}
+]}

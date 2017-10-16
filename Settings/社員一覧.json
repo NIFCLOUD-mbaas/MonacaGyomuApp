@@ -1,0 +1,172 @@
+{"results":[
+	{
+		"acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00001",
+		"name":"布施文世",
+		"affiliation":"第二営業部",
+    "emailAddress":"fusefumiyo@example.com",
+    "phoneNumber":"080-0660-0053",
+		"remarks":""
+	},
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00002",
+    "name":"加藤鉄洋",
+    "affiliation":"第一営業部",
+    "emailAddress":"katoutetsuhiro@example.com",
+    "phoneNumber":"080-2471-0117",
+    "remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00003",
+    "name":"秋葉大五郎",
+    "affiliation":"商品開発部",
+    "emailAddress":"akibadaigorou@example.com",
+    "phoneNumber":"080-9906-4155",
+    "remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00004",
+    "name":"岡山法嗣",
+    "affiliation":"商品開発部",
+    "emailAddress":"okayamahoushi@example.com",
+    "phoneNumber":"080-7376-3717",
+    "remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00005",
+    "name":"平岡雅彦",
+    "affiliation":"第一営業部",
+    "emailAddress":"hiraokamasahiko@example.com",
+    "phoneNumber":"080-2393-6278",
+    "remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00006",
+    "name":"蛍原樹里",
+    "affiliation":"商品企画部",
+    "emailAddress":"hotoharajuri@example.com",
+    "phoneNumber":"090-8795-9678",
+    "remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00007",
+    "name":"細川恭子",
+    "affiliation":"第二営業部",
+    "emailAddress":"hosokawakyouko@example.com",
+    "phoneNumber":"080-7998-2550",
+    "remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00008",
+    "name":"安藤惇",
+    "affiliation":"商品開発部",
+    "emailAddress":"andojun@example.com",
+    "phoneNumber":"090-0002-4354",
+    "remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00009",
+    "name":"前原なぎさ",
+    "affiliation":"第一営業部",
+    "emailAddress":"maeharanagisa@example.com",
+    "phoneNumber":"090-1841-7705",
+    "remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00010",
+    "name":"瀬川勤",
+    "affiliation":"第一営業部",
+    "emailAddress":"segawatsutomu@example.com",
+    "phoneNumber":"090-8620-0129",
+    "remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00011",
+    "name":"北田高史",
+    "affiliation":"商品企画部",
+    "emailAddress":"kitadatakashi@example.com",
+    "phoneNumber":"080-1277-8042","remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00012",
+    "name":"西野あや子",
+    "affiliation":"商品開発部",
+    "emailAddress":"nishinoayako@example.com",
+    "phoneNumber":"090-3162-3226","remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00013",
+    "name":"熊谷幸平",
+    "affiliation":"第二営業部",
+    "emailAddress":"kumagayakouhei@example.com",
+    "phoneNumber":"080-0651-1183","remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00014",
+    "name":"藤原信輔",
+    "affiliation":"第二営業部",
+    "emailAddress":"fujiwarashinsuke@example.com",
+    "phoneNumber":"080-6695-5337","remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00015",
+    "name":"朝倉恵梨香",
+    "affiliation":"商品企画部",
+    "emailAddress":"asakuraerika@example.com",
+    "phoneNumber":"080-6857-5627","remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00016",
+    "name":"国分由樹",
+    "affiliation":"商品企画部",
+    "emailAddress":"kokubunnyuki@example.com",
+    "phoneNumber":"090-2669-6256","remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00017",
+    "name":"中尾恵梨香",
+    "affiliation":"商品開発部",
+    "emailAddress":"nakaoerika@example.com",
+    "phoneNumber":"090-8236-6355","remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00018",
+    "name":"成海まなみ",
+    "affiliation":"第二営業部",
+    "emailAddress":"narumimanami@example.com",
+    "phoneNumber":"080-1312-8516","remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00019",
+    "name":"宮内信輔",
+    "affiliation":"商品開発部",
+    "emailAddress":"miyauchishinsuke@example.com",
+    "phoneNumber":"080-2005-4945","remarks":""
+  },
+  {
+    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+    "employeeNumber":"00020",
+    "name":"関根サダヲ",
+    "affiliation":"第二営業部",
+    "emailAddress":"sekinesadawo@example.com",
+    "phoneNumber":"090-0403-8694","remarks":""
+	}
+]}
