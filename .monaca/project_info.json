@@ -14,12 +14,12 @@
     ],
     "title-ja": "MonacaGyomuApp",
     "title-en": "",
-    "description-ja": "データストア機能（リレーション・ポインター、参照権限）を活用したサンプルアプリです",
+    "description-ja": "",
     "description-en": "",
     "category": "User Template",
     "platform": [
         "android",
         "ios"
     ],
-    "name": "generated-1508151011-59d1cffe013eb07a213f6950"
+    "name": "generated-1508233539-59d1cffe013eb07a213f6950"
 }

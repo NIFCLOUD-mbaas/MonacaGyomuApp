@@ -23,16 +23,17 @@
                 <input type="text" id="login_username">
                 パスワード
                 <input type="password" id="IDLogin_password">
-                新規登録？
+                新規登録はこちら
                 <a href="#IDRegisterPage" data-role="button" data-mini="true" data-inline="true" data-theme="b">登録</a>
-                <a href="#" id="IDLoginBtn" data-role="button" data-inline="false" data-theme="b">ログインする</a>
+                <a href="#" id="IDLoginBtn" data-role="button" style="float: right;" data-inline="true" data-theme="b">ログインする</a>
             </div>
         </div>
     
-      <!-- 【会員認証】新規登録ページ -->
+        <!-- 【会員認証】新規登録ページ -->
         <div data-role="page" id="IDRegisterPage">
             <div data-role="header" data-position="fixed" data-theme="c">
                 <h1>顧客管理DEMO</h1>
+                <a href="#" class="ui-btn-left" data-role="button" data-icon="back" data-inline="true" data-rel="back" data-transition="flow">戻る</a>
             </div>
             <div data-role="content">
                 <h3>新規登録</h3>
@@ -40,8 +41,7 @@
                 <input type="text" id="reg_username">
                 パスワード
                 <input type="password" id="IDReg_password">
-                <a href="#" id="IDRegisterBtn" data-role="button" data-inline="false" data-theme="b">登録する</a>
-                <a href="#IDLoginPage" data-role="button" data-mini="true" data-inline="true" data-theme="b">戻る</a>
+                <a href="#" id="IDRegisterBtn" data-role="button" style="float: right;" data-inline="true" data-theme="b">登録する</a>
             </div>
         </div>
     
@@ -54,9 +54,7 @@
             </div>
             <div data-role="content">
                 <!--customerList-->
-                <center><table data-role="listview" class="customerList" id="customerList" style="width: 95%;">
-                    
-                </table></center>
+                <center><table data-role="listview" class="customerList" id="customerList" style="width: 95%;"></table></center>
                 <!--Dialog box confirming logout-->
                 <div data-role="popup" id="yesNoDialog_logout" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
                     <div data-role="header" data-theme="c" class="ui-corner-top" style="top: 0 !important;">
@@ -92,42 +90,28 @@
                 <!--顧客登録フォーム-->
                 <h1>顧客登録フォーム</h1>
                 顧客選択
-                <select id="companySelect">
-                    <!--<option value="0">--顧客を選択してください--</option>-->
-                </select>
+                <select id="companySelect"></select>
                 担当社員選択
-                <select id="employeeSelect_0">
-                    <option value="0">--担当社員(1)を選択してください--</option>
-                </select>
-                <select id="employeeSelect_1">
-                    <option value="0">--担当社員(2)を選択してください--</option>
-                </select>
-                <select id="employeeSelect_2">
-                    <option value="0">--担当社員(3)を選択してください--</option>
-                </select>
-                <select id="employeeSelect_3">
-                    <option value="0">--担当社員(4)を選択してください--</option>
-                </select>
-                <select id="employeeSelect_4">
-                    <option value="0">--担当社員(5)を選択してください--</option>
-                </select>
+                <select id="employeeSelect_0"></select>
+                <select id="employeeSelect_1"></select>
+                <select id="employeeSelect_2"></select>
+                <select id="employeeSelect_3"></select>
+                <select id="employeeSelect_4"></select>
                 備考
                 <textarea id="addRemarks"></textarea>
-                <a href="#" id="sendNewCustomerBtn" data-role="button" data-theme="b">登録する</a>
+                <a href="#" id="sendNewCustomerBtn" data-role="button" style="float: right;" data-inline="true" data-theme="b">登録する</a>
             </div>
         </div>
         
         <!-- 管理者ページ -->
         <div data-role="page" id="adminPage">
-             <div data-role="header" data-position="fixed" data-theme="c">
+            <div data-role="header" data-position="fixed" data-theme="c">
                 <h1>顧客管理DEMO</h1>
                 <a href="#" class="ui-btn-left" data-role="button" data-icon="back" data-inline="true" data-rel="back" data-transition="flow">戻る</a>
             </div>
             <div data-role="content">
                 <!--customerList-->
-                <center><table data-role="listview" class="editCustomerList" id="editCustomerList" style="width: 95%;">
-                    
-                </table></center>
+                <center><table data-role="listview" class="editCustomerList" id="editCustomerList" style="width: 95%;"></table></center>
                 <!--Dialog box confirming delete-->
                 <div data-role="popup" id="yesNoDialog_delete" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
                     <div data-role="header" data-theme="c" class="ui-corner-top" style="top: 0 !important;">
@@ -146,64 +130,49 @@
         
         <!-- 会社一覧ページ -->
         <div data-role="page" id="companyListPage">
-             <div data-role="header" data-position="fixed" data-theme="c">
-                <h1>顧客管理DEMO</h1>
-                <a href="#" class="ui-btn-left" data-role="button" data-icon="back" data-inline="true" data-rel="back" data-transition="flow">戻る</a>
-                <!--<a href="#" id="companyListReloadBtn" class="ui-btn-right" data-role="button" data-icon="refresh">更新</a>-->
-            </div>
-            <div data-role="content">
-                <!--employeeList-->
-                <center><table data-role="listview" class="companyList" id="companyList" style="width: 95%;">
-                    <tr style="border-right: 1px solid #ccc; border-left: 1px solid #ccc; color: #FFFFFF; background: #04162e;">
-                        <th scope="row" id='companyNumber'>会社番号</th><td scope="row" id='companyName'>社名</td>
-                        
-                    </tr>
-                </table></center>
-            </div>
-        </div>
-        
-        <!-- 会社詳細ページ -->
-        <div data-role="page" id="companyPage">
-             <div data-role="header" data-position="fixed" data-theme="c">
+            <div data-role="header" data-position="fixed" data-theme="c">
                 <h1>顧客管理DEMO</h1>
                 <a href="#" class="ui-btn-left" data-role="button" data-icon="back" data-inline="true" data-rel="back" data-transition="flow">戻る</a>
             </div>
             <div data-role="content">
                 <!--companyList-->
-                <center><table data-role="listview" class="company" id="company" style="width: 95%;">
-                </table></center>
+                <center><table data-role="listview" class="companyList" id="companyList" style="width: 95%;"></table></center>
+            </div>
+        </div>
+        
+        <!-- 会社詳細ページ -->
+        <div data-role="page" id="companyPage">
+            <div data-role="header" data-position="fixed" data-theme="c">
+                <h1>顧客管理DEMO</h1>
+                <a href="#" class="ui-btn-left" data-role="button" data-icon="back" data-inline="true" data-rel="back" data-transition="flow">戻る</a>
+            </div>
+            <div data-role="content">
+                <!--company-->
+                <center><table data-role="listview" class="company" id="company" style="width: 95%;"></table></center>
             </div>
         </div>
         
         <!-- 社員一覧ページ -->
         <div data-role="page" id="employeeListPage">
-             <div data-role="header" data-position="fixed" data-theme="c">
+            <div data-role="header" data-position="fixed" data-theme="c">
                 <h1>顧客管理DEMO</h1>
                 <a href="#" class="ui-btn-left" data-role="button" data-icon="back" data-inline="true" data-rel="back" data-transition="flow">戻る</a>
-                <!--<a href="#" id="employeeListReloadBtn" class="ui-btn-right" data-role="button" data-icon="refresh">更新</a>-->
             </div>
             <div data-role="content">
                 <!--employeeList-->
-                <center><table data-role="listview" class="employeeList" id="employeeList" style="width: 95%;">
-                    <tr style="border-right: 1px solid #ccc; border-left: 1px solid #ccc; color: #FFFFFF; background: #04162e;">
-                        <th scope="row" id='employeeNumber'>社員番号</th><td scope="row" id='name'>氏名</td>
-                        
-                    </tr>
-                </table></center>
+                <center><table data-role="listview" class="employeeList" id="employeeList" style="width: 95%;"></table></center>
             </div>
         </div>
         
         <!-- 社員詳細ページ -->
         <div data-role="page" id="employeePage">
-             <div data-role="header" data-position="fixed" data-theme="c">
+            <div data-role="header" data-position="fixed" data-theme="c">
                 <h1>顧客管理DEMO</h1>
                 <a href="#" class="ui-btn-left" data-role="button" data-icon="back" data-inline="true" data-rel="back" data-transition="flow">戻る</a>
             </div>
             <div data-role="content">
-                <!--employeeList-->
-                <center><table data-role="listview" class="employee" id="employee" style="width: 95%;">
-                    
-                </table></center>
+                <!--employee-->
+                <center><table data-role="listview" class="employee" id="employee" style="width: 95%;"></table></center>
             </div>
         </div>
         
