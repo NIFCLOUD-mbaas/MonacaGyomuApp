@@ -193,7 +193,7 @@ function onSendNewCustomerBtn() {
         var Employee = ncmb.DataStore('Employee');
 
         /*** [NCMB] ポインタデータの作成 ***/
-        var company = new Company({"objectId": companySelectVal});
+        var pointer = new Company({"objectId": companySelectVal});
 
         /*** [NCMB] リレーションデータの作成 ***/
         var relation = new ncmb.Relation();
@@ -230,7 +230,7 @@ function onSendNewCustomerBtn() {
            .setRoleReadAccess('admin', true)
            .setRoleWriteAccess('admin', true);
         // [NCMB] ポインタ/リレーションデータ/ACLの設定と保存
-        customer.set('company', company) /** ポインタ **/
+        customer.set('company', pointer) /** ポインタ **/
                 .set('employee', relation) /** リレーション **/
                 .set('remarks', remarks)
                 .set('acl', acl)
