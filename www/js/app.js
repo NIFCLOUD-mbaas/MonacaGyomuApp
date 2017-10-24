@@ -67,7 +67,8 @@ function getCompanyData() {
     // [NCMB] Company クラスを生成
     var customer = ncmb.DataStore('Company');
     // [NCMB] Company クラス全件検索/取得
-    customer.fetchAll()
+    customer.order('companyNumber')
+            .fetchAll()
             .then(function(results){
                 // 検索/取得成功時の処理
                 console.log('Company クラス全件検索/取得成功');
@@ -85,7 +86,8 @@ function getEmployeeData() {
     // [NCMB] Employee クラスを生成
     var employee = ncmb.DataStore('Employee');
     // [NCMB] Employee クラス全件検索/取得
-    employee.fetchAll()
+    employee.order('employeeNumber')
+            .fetchAll()
             .then(function(results){
                 // 検索/取得成功時の処理
                 console.log('Employee クラス全件検索/取得成功');
@@ -110,6 +112,7 @@ function getCustomerData() {
     var customer = ncmb.DataStore('Customer');
     // [NCMB] Customer クラス全件検索/取得（ポインタ参照先オブジェクトの情報を含む）
     customer.include('company') // ★検索条件
+            .order('createDate', true)
             .fetchAll()
             .then(function(results){
                 // 検索/取得成功時の処理
@@ -180,7 +183,9 @@ function onSendNewCustomerBtn() {
 
     // 入力チェック
     if (companySelectVal == '0' || employeeSelect_0 == '0') {
-        alert('必須項目が未選択です')
+        alert('必須項目が未選択です');
+        // loading の表示
+        $.mobile.loading('hide');
     } else {
         // [NCMB] Company クラスを生成
         var Company = ncmb.DataStore('Company');
@@ -219,10 +224,16 @@ function onSendNewCustomerBtn() {
         var Customer = ncmb.DataStore('Customer');
         // [NCMB] Customer クラスのインスタンスを生成
         var customer = new Customer();
-        // [NCMB] ポインタ/リレーションデータの設定と保存
+        // [NCMB] 参照権限設定(adminRole:read & write, other: read)
+        var acl = new ncmb.Acl();
+        acl.setPublicReadAccess(true)
+           .setRoleReadAccess('admin', true)
+           .setRoleWriteAccess('admin', true);
+        // [NCMB] ポインタ/リレーションデータ/ACLの設定と保存
         customer.set('company', company) /** ポインタ **/
                 .set('employee', relation) /** リレーション **/
                 .set('remarks', remarks)
+                .set('acl', acl)
                 .save()
                 .then(function(result){
                     // 新規顧客登録成功時の処理
