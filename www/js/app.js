@@ -65,9 +65,9 @@ $(document).on('pageshow','#employeeListPage', function(e, d) {
 // データ取得（会社）
 function getCompanyData() {
     // [NCMB] Company クラスを生成
-    var customer = ncmb.DataStore('Company');
+    var company = ncmb.DataStore('Company');
     // [NCMB] Company クラス全件検索/取得
-    customer.order('companyNumber')
+    company.order('companyNumber')
             .fetchAll()
             .then(function(results){
                 // 検索/取得成功時の処理
