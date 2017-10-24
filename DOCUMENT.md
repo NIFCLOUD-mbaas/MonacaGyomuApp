@@ -298,12 +298,12 @@ http://mb.cloud.nifty.com/
 * 新しいアプリを作成します
 * アプリ名を入力し「`新規作成`」をクリックします　例）.color_blue[__CustomerManage__]
 
-.center[<img src="document-img/make_mb_app_2.png" alt="make_mb_app_2" width="450px">]
+.center[<img src="document-img/make_mb_app_2.PNG" alt="make_mb_app_2" width="450px">]
 
 
 * mBaaS を既に使用したことがある場合は、画面上方のメニューバーにある「`+新しいアプリ`」をクリックすると同じ画面が表示されます
 
-.center[<img src="document-img/make_mb_app_1.png" alt="make_mb_app_1" width="150px">]
+.center[<img src="document-img/make_mb_app_1.PNG" alt="make_mb_app_1" width="150px">]
 
 ---
 .footnote_right[
@@ -317,7 +317,7 @@ http://mb.cloud.nifty.com/
  * APIキーは後で使用します。
 * ここでは使用しないので、「OK」で閉じます
 
-.center[<img src="document-img/make_mb_app_3.png" alt="make_mb_app_3" width="500px">]
+.center[<img src="document-img/make_mb_app_3.PNG" alt="make_mb_app_3" width="500px">]
 
 ---
 .footnote_right[
@@ -329,7 +329,7 @@ http://mb.cloud.nifty.com/
 <br>
 * ダッシュボードが表示されます
 
-.center[<img src="document-img/make_mb_app_4.png" alt="make_mb_app_4" width="700px">]
+.center[<img src="document-img/make_mb_app_4.PNG" alt="make_mb_app_4" width="700px">]
 
 ---
 .footnote_right[
@@ -354,7 +354,7 @@ http://mb.cloud.nifty.com/
 #### データ（会社・社員）のインポート
 * ダッシュボードで「`データストア`」を開き、`＋作成▼` ＞ `インポート` をクリックします
 
-.center[<img src="document-img/make_datastore_class_1.png" alt="make_datastore_class_1" width="450px">]
+.center[<img src="document-img/make_datastore_class_1.PNG" alt="make_datastore_class_1" width="450px">]
 
 ---
 .footnote_right[
@@ -367,11 +367,11 @@ http://mb.cloud.nifty.com/
 * １つずつインポートします
 * 次のようにクラス名を入力してファイルを選択し「 `インポート` 」をクリックします
 
-.center[<img src="document-img/make_datastore_class_2.png" alt="make_datastore_class_2" width="350px">]
+.center[<img src="document-img/make_datastore_class_2.PNG" alt="make_datastore_class_2" width="350px">]
 
 * 同様にもう１つもインポートします
 
-.center[<img src="document-img/make_datastore_class_3.png" alt="make_datastore_class_3" width="350px">]
+.center[<img src="document-img/make_datastore_class_3.PNG" alt="make_datastore_class_3" width="350px">]
 
 ---
 .footnote_right[
@@ -383,7 +383,7 @@ http://mb.cloud.nifty.com/
 #### データ（会社・社員）のインポート
 * `Company` クラスと `Employee` クラスが作成されました
 
-.center[<img src="document-img/make_datastore_class_4.png" alt="make_datastore_class_4" width="750px">]
+.center[<img src="document-img/make_datastore_class_4.PNG" alt="make_datastore_class_4" width="750px">]
 
 * 図は `Company` クラスが選択され表示されている状態です
 
@@ -476,10 +476,29 @@ http://mb.cloud.nifty.com/
 
 ### 2.1. インポートしたデータ（会社・社員）の表示確認
 #### 新規登録・ログイン処理
-* Monaca のプレビュー画面で動作確認をします
+Monaca のプレビュー画面で動作確認をします
 
-<br><br><br><br><br>
-.center[★★★★★後ほど作成する★★★★★]
+* 後ほど権限管理を行うためログイン機能を実装しています
+ * ここでは解説はしません
+* `登録` ボタンを押して、新規登録画面からアカウントを作成します
+
+.center[<img src="document-img/user_login_1.PNG" alt="user_login_1" width="400px">]
+
+---
+.footnote_right[
+.right[
+ハンズオン<br>2.1. インポートしたデータ（会社・社員）の表示確認
+]
+]
+
+#### 新規登録・ログイン処理
+
+* 今回は動作確認なので、わかりやすいもので ユーザー名 と パスワード を設定しましょう
+* 入力したら `登録する` ボタンを押します
+
+.center[<img src="document-img/user_login_2.PNG" alt="user_login_2" width="400px">]
+
+* 新規アカウントが登録され、同時にログイン処理が実行されます
 
 ---
 .footnote_right[
@@ -488,7 +507,7 @@ http://mb.cloud.nifty.com/
 ]
 ]
 #### データの検索取得処理
-* ログイン後トップ画面が表示されます
+* ログインに成功すると、トップ画面が表示されます
 * まずは「`会社一覧`」をクリックしてみましょう
 
 .center[<img src="document-img/app_image_01.PNG" alt="app_image_01" width="500px">]
@@ -551,9 +570,9 @@ http://mb.cloud.nifty.com/
 
 ```js
 // [NCMB] Company クラスを生成
-var customer = ncmb.DataStore('Company');
+var company = ncmb.DataStore('Company');
 // [NCMB] Company クラス全件検索/取得
-customer.order('companyNumber')
+company.order('companyNumber')
         .fetchAll()
         .then(function(results){
             // 検索/取得成功時の処理
@@ -761,7 +780,7 @@ mBaaS に登録したデータを関連付けして、顧客管理をしてみ�
 // [NCMB] Company クラスを生成
 var Company = ncmb.DataStore('Company');
 /*** [NCMB] ポインタデータの作成 ***/
-var company = new Company({"objectId": companySelectVal});
+var pointer = new Company({"objectId": companySelectVal});
 ```
 * `companySelectVal` は選択した顧客（会社）の `objectId`
 
@@ -795,7 +814,7 @@ var Customer = ncmb.DataStore('Customer');
 // [NCMB] Customer クラスのインスタンスを生成
 var customer = new Customer();
 // [NCMB] ポインタ/リレーションデータと保存
-customer.set('company', company) /** ポインタ **/
+customer.set('company', pointer) /** ポインタ **/
         .set('employee', relation) /** リレーション **/
         .set('remarks', remarks)
         .save()
@@ -884,7 +903,7 @@ Promise.all(promises)
 function getRelationEmployeeData(int) {
     /*** Promise ***/
     return new Promise(function(resolve, reject) {
-        var data = customerData[int];
+        var data = results[int];
         // [NCMB] Employee クラスインスタンス生成
         var employee = ncmb.DataStore('Employee');
         // [NCMB] リレーション先 Employee クラス検索/取得
@@ -1067,8 +1086,7 @@ function getRelationEmployeeData(int) {
 ]
 #### データ保存時のACL設定（コード）
 * `js/app.js` の 171行目 `新規顧客登録フォーム「登録する」ボタン押下時の処理` 以下に記載があります
-* 顧客管理データ保存の際に実は以下のコードを記載しています
-  * 先ほどの説明では省略しました
+* 顧客管理データ保存の際に実は以下のコードを記載しています（先ほどは省略していました）
 
 ```js
 // [NCMB] 参照権限設定(adminRole:read & write, other: read)
@@ -1077,12 +1095,17 @@ acl.setPublicReadAccess(true)
    .setRoleReadAccess('admin', true)
    .setRoleWriteAccess('admin', true);
 // [NCMB] ポインタ/リレーションデータ/ACLの設定と保存
-customer.set('company', company)
+customer.set('company', pointer)
        .set('employee', relation)
        .set('remarks', remarks)
        .set('acl', acl)  /* ←ここで設定★ */
        .save()
 ```
+
+* `setPublicReadAccess(真偽値)` : 全員 読み込み権限（true: 許可, false: 拒否）
+* `setRoleReadAccess('ロール名', 真偽値)` : <br>特定のロール 読み込み権限（true: 許可, false: 拒否）
+* `setRoleWriteAccess('ロール名', 真偽値)` : <br>特定のロール 書き込み権限（true: 許可, false: 拒否）
+
 ---
 .footnote_right[
 .right[
@@ -1091,7 +1114,27 @@ customer.set('company', company)
 ]
 
 ### 2.5. 管理者ユーザーでログイン・ボタンの表示確認
-hoge
+* プレビュー画面をリロードするか、１度ログアウトします
+  * ログアウトする場合は、トップ画面で左上の `ログアウト` ボタンを押します
+* ログイン画面に戻るので、先ほど管理者ユーザーに設定したアカウントでログインします
+
+.center[<img src="document-img/user_login_3.PNG" alt="user_login_3" width="400px">]
+
+---
+.footnote_right[
+.right[
+ハンズオン<br>2.5. 管理者ユーザーでログイン・ボタンの表示確認
+]
+]
+<br><br>
+
+* ログインするとトップ画面に先ほどには無かったボタンが現れます！
+  * これはログイン処理に成功したタイミングで確認し、アカウントが管理ユーザーであった場合に表示するようにしています
+
+.center[<img src="document-img/app_image_17.PNG" alt="app_image_17" width="400px">]
+
+* `管理者` ボタンを押してみましょう！
+
 ---
 .footnote_right[
 .right[
@@ -1100,7 +1143,79 @@ hoge
 ]
 
 ### 2.6. データの削除と表示確認
-hoge
+* 管理者ページはトップ画面と同じく顧客管理データの一覧が表示されます
+
+.center[<img src="document-img/app_image_18.PNG" alt="app_image_18" width="400px">]
+
+* 管理者機能としてデータを削除できるように作っています
+* データを１つ選択してみましょう
+
+---
+.footnote_right[
+.right[
+ハンズオン<br>2.6. データの削除と表示確認
+]
+]
+<br><br>
+
+* 確認ダイアログが表示されます
+* `はい` を押すと削除が実行されます
+
+.center[<img src="document-img/app_image_19.PNG" alt="app_image_19" width="400px">]
+
+* 補足
+  * 顧客管理データの書き込み権限は管理者ユーザーにしか無いため、一般ユーザーではデータの削除することはできません
+
+---
+.footnote_right[
+.right[
+ハンズオン<br>2.6. データの削除と表示確認
+]
+]
+<br><br>
+
+* 削除が完了するとトップ画面に戻ります
+
+.center[<img src="document-img/app_image_25.PNG" alt="app_image_25" width="400px">]
+
+* 最後に削除処理の実装を確認しましょう！
+
+---
+.footnote_right[
+.right[
+ハンズオン<br>2.6. データの削除と表示確認
+]
+]
+<br>
+
+* まず選択した顧客管理データの `objectId` を指定して、該当するデータを mBaaS から取得します
+* その後、取得したデータに対して削除処理を実行しています
+  * 一括削除を行うことはできません
+
+```js
+// [NCMB] Customer クラスを生成
+var customer = ncmb.DataStore('Customer');
+// [NCMB] objectId で検索
+customer.equalTo('objectId', deleteId)
+        .fetch()
+        .then(function(result){
+            // 検索成功時の処理
+            // [NCMB] 検索結果を削除
+            result.delete()
+                  .then(function(results){
+                      // 削除成功時の処理
+
+                });
+        })
+        .catch(function(error){
+            // 検索または削除失敗時の処理
+
+        });
+```
+
+* `equalTo('フィールド名', 値)` : 【検索条件】フィールドに値が一致する
+* `fetch()` : １件検索
+* `delete()` : 削除
 
 ---
 .footnote_right[
@@ -1110,7 +1225,16 @@ hoge
 ]
 
 ## まとめ
-* hoge
+
+.size_large_13[
+
+* リレーションとポインタを上手く活用することで<br>データを楽に管理できることがわかった
+  * 同じデータを複数持つ必要がない！
+  * データの更新が簡単！
+* ロールを使って気軽に管理者ユーザーを作れることがわかった
+  * データ保存時に簡単に参照権限の設定ができる！
+  * ロール
+]
 
 ---
 layout: true
@@ -1141,16 +1265,6 @@ layout: false
  * 使用機能 / データストア,位置情報検索
 * [and more...](http://mb.cloud.nifty.com/doc/current/tutorial/tutorial_monaca.html)
 ]
-
----
-.footnote_right[
-.right[
-おわりに
-]
-]
-
-## 本日の資料配布について
-アンケートをご回答いただいた方に資料URLをお送りします。ご協力をお願いします。
 
 ---
 layout: true
