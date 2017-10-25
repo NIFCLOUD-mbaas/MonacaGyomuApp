@@ -1067,7 +1067,7 @@ function getRelationEmployeeData(int) {
 ]
 #### データ保存時のACL設定（jsonインポート）
 * json ファイルを使って mBaaS にデータをインポートする際にデータに権限付与が可能です
-* ダウンロードしたプロジェクト内 `Setting` ＞ `EMO_Company_5.json` を開いてみましょう
+* ダウンロードしたプロジェクト内 `Setting` ＞ `DEMO_Company_5.json` を開いてみましょう
 
 ```json
 {"results":[
