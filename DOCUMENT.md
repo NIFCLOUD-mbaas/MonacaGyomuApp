@@ -1223,29 +1223,25 @@ customer.set('company', pointer)
 ]
 <br>
 
-* まず選択した顧客管理データの `objectId` を指定して、該当するデータを mBaaS から取得します
-* その後、取得したデータに対して削除処理を実行しています
-  * 一括削除を行うことはできません
+* 選択した顧客管理データの `objectId` を指定して、該当するデータ削除処理を実行しています
+  * 削除は１件ずつおこないます（一括削除を行うことはできません）
 
 ```js
 // [NCMB] Customer クラスを生成
-var customer = ncmb.DataStore('Customer');
-// [NCMB] objectId で検索
-customer.equalTo('objectId', deleteId)
-        .fetch()
-        .then(function(result){
-            // 検索成功時の処理
-            // [NCMB] 検索結果を削除
-            result.delete()
-                  .then(function(results){
-                      // 削除成功時の処理
+    var Customer = ncmb.DataStore('Customer');
+    // [NCMB] Customer クラスインスタンスを生成
+    var customer = new Customer();
+    // [NCMB] objectId を指定してデータを削除
+    customer.set('objectId', deleteId)
+            .delete()
+            .then(function(result){
+                // 削除成功時の処理
 
-                });
-        })
-        .catch(function(error){
-            // 検索または削除失敗時の処理
+            })
+            .catch(function(error){
+                // 検索または削除失敗時の処理
 
-        });
+            });
 ```
 
 * `equalTo('フィールド名', 値)` : 【検索条件】フィールドに値が一致する
