@@ -6,7 +6,7 @@ class: center, middle, inverse
 富士通クラウドテクノロジーズ株式会社
 
 .footnote[
-20171025作成
+20171025作成（20171026修正）
 ]
 
 ---
@@ -574,15 +574,15 @@ Monaca のプレビュー画面で動作確認をします
 var company = ncmb.DataStore('Company');
 // [NCMB] Company クラス全件検索/取得
 company.order('companyNumber')
-        .fetchAll()
-        .then(function(results){
-            // 検索/取得成功時の処理
+       .fetchAll()
+       .then(function(results){
+           // 検索/取得成功時の処理
 
-        })
-        .catch(function(error){
-            // 検索/取得失敗時の処理
+       })
+       .catch(function(error){
+           // 検索/取得失敗時の処理
 
-        });
+       });
 ```
 
 * `order` : 【検索条件】昇順
@@ -635,9 +635,9 @@ employee.order('employeeNumber')
     "updateDate":"2017-10-24T01:08:24.252Z",
     "acl":{"*":{"read":true},"role:admin":{"read":true,"write":true}},
     "companyNumber":"10001",
-    "companyName":"○○株式会社"
-    ,"phoneNumber":"03-3832-9419"
-    ,"mainOffice":"東京都足立区千住柳町2-3-7",
+    "companyName":"○○株式会社",
+    "phoneNumber":"03-3832-9419",
+    "mainOffice":"東京都足立区千住柳町2-3-7",
     "remarks":""
   },
   ...
@@ -1047,7 +1047,7 @@ function getRelationEmployeeData(int) {
 .size_large_11[
 
 * 管理者としての権限を管理者ロール `admin` に持たせ、`admin` ロールに所属したユーザーを管理ユーザーとします
-* 各保存データごとに参照権限（ACL）を「管理ユーザー以外データの下記書き換えが出来ない状態」に設定します
+* 各保存データごとに参照権限（ACL）を「管理ユーザー以外データの書き換えが出来ない状態」に設定します
   * 全員 読み込み許可
   * `admin`ロール 読み書き許可
 * `admin` ロールに属しているユーザーは、ロールの持つ権限と同じ権限を持たせることができます
@@ -1071,17 +1071,17 @@ function getRelationEmployeeData(int) {
 
 ```json
 {"results":[
-	{
-    "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
-    "companyNumber":"10001",
-    "companyName":"○○株式会社",
-    "phoneNumber":"03-3832-9419",
-    "mainOffice":"東京都足立区千住柳町2-3-7",
-    "remarks":""
-	},
-  {
-    ...
-  }
+    {
+        "acl":{"*":{"read":true}, "role:admin":{"read":true,"write":true}},
+        "companyNumber":"10001",
+        "companyName":"○○株式会社",
+        "phoneNumber":"03-3832-9419",
+        "mainOffice":"東京都足立区千住柳町2-3-7",
+        "remarks":""
+  	},
+    {
+      ...
+    }
 ]}
 ```
 
