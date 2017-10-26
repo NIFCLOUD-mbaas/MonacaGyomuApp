@@ -347,23 +347,19 @@ function onYesBtn_delete() {
     // loading の表示
     $.mobile.loading('show');
     // [NCMB] Customer クラスを生成
-    var customer = ncmb.DataStore('Customer');
-    // [NCMB] objectId で検索
-    customer.equalTo('objectId', deleteId)
-            .fetch()  /* 1件検索 */
+    var Customer = ncmb.DataStore('Customer');
+    // [NCMB] Customer クラスインスタンスを生成
+    var customer = new Customer();
+    // [NCMB] objectId を指定してデータを削除
+    customer.set('objectId', deleteId)
+            .delete()
             .then(function(result){
-                // 検索成功時の処理
-                // [NCMB] 検索結果を削除
-                result.delete()
-                      .then(function(results){
-                          // 削除成功時の処理
-                          console.log('削除に成功しました');
-                          // loading の表示
-                          $.mobile.loading('hide');
-                          // Top画面へ
-                          $.mobile.changePage('#customerTopPage');
-
-                    });
+                // 削除成功時の処理
+                console.log('削除に成功しました');
+                // loading の表示
+                $.mobile.loading('hide');
+                // Top画面へ
+                $.mobile.changePage('#customerTopPage');
             })
             .catch(function(error){
                 // 検索または削除失敗時の処理
