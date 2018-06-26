@@ -2,11 +2,12 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-# <span style="font-size: 30%">【Monaca × ニフティクラウド mobile backend】 クラウドデータベースを使ってみよう！Part.2</span><br> 『リレーション・権限管理機能を使いこなそう！』
+# <span style="font-size: 30%">【Monaca × ニフクラ mobile backend】</span><br> リレーション・権限管理<br>機能を使いこなそう！
 富士通クラウドテクノロジーズ株式会社
 
+.right[<img src="document-img/takano.png" alt="takano.png" width="150px">]
 .footnote[
-20171025作成（20171026修正）
+20171025作成（20180627修正）
 ]
 
 ---
@@ -39,7 +40,7 @@ layout: false
 ## セミナー概要
 クラウドデータベース内のデータを関連付ける「リレーション・ポインタ」機能と権限管理を行う「ACL」機能の活用方法を学び習得します
 
-.center[<img src="document-img/app_image_summary_2.png" alt="app_image_summary_2.png" width="700px">]
+.center[<img src="document-img/app_image_summary_2.png" alt="app_image_summary_2.png" width="650px">]
 
 ---
 .footnote_right[
@@ -48,7 +49,7 @@ layout: false
 
 ## セミナー概要
 ### データの「関連付け」が出来るメリットとは？
-* mBaaS は一般的な RDB（リレーショナルデータベース）とほとんど同様にデータを関連付けて管理することができます
+* mobile backend は一般的な RDB（リレーショナルデータベース）とほとんど同様にデータを関連付けて管理することができます
 * 関連付けによってデータを管理できるため、同じデータを複数保持する必要がありません
 * また同じデータを重複して持たないため、データに更新があった場合も１箇所修正するだけ OK です
 
@@ -61,7 +62,7 @@ layout: false
 
 ## セミナー概要
 ### データの「権限管理」が使えるメリットとは？
-mBaaSではユーザーをグルーピングするロールという機能があります
+mobile backendではユーザーをグルーピングするロールという機能があります
 
 * ロールごとに参照権限を設定でき、セキュリティを高められる
 * ロール単位で一括して権限を管理できるので、運用効率も上がります
@@ -82,39 +83,43 @@ mBaaSではユーザーをグルーピングするロールという機能があ
 .footnote_right[
 はじめに
 ]
-## 今回利用するツール
-### ニフティクラウド mobile backend（ mBaaS ）
-* __にふてぃくらうど-もばいる-ばっくえんど 【[ニフティクラウド mobile backend](http://mb.cloud.nifty.com/about.htm)】__ スマートフォンアプリに必要なバックエンド機能が開発不要で利用できるクラウドサービス。 クラウド上に用意された機能をAPIで呼び出すだけで利用できます。また、APIを簡単に使うためのSDKを用意しています（ iOS / Android / Monaca / Unity ）。mobile Backend as a Service の頭文字を取って、通称 **mBaaS** 呼ばれます。
 
+## 今回利用するツール
+### ニフクラ mobile backend
+
+.left-column[
+* __にふくら-もばいる-ばっくえんど 【[ニフクラ mobile backend](http://mb.cloud.nifty.com/about.htm)】__ スマートフォンアプリに必要なバックエンド機能が開発不要で利用できるクラウドサービス。 クラウド上に用意された機能をAPIで呼び出すだけで利用できます。また、APIを簡単に使うためのSDKを用意しています（ iOS / Android / Monaca / Unity ）。mobile Backend as a Service の頭文字を取って、通称 **mBaaS** 呼ばれます。
+]
+
+.right-column[
 .center[<img src="document-img/About_mBaaS.png" alt="About_mBaaS" width="350px">]
+]
 
 ---
 .footnote_right[
 はじめに
 ]
 
-## 今回利用するツール
-### Monaca と mBaaS で<br>サーバー連携アプリは簡単に実現可能に
+### Monaca と mobile backend で<br>サーバー連携アプリは簡単に実現可能に
 この２つを組み合わせると、高度なアプリも簡単スピーディーに開発できます
 
 .center[<img src="document-img/Monaca_mBaaS.png" alt="Monaca_mBaaS" width="400px">]
 
 .left-column[
-__《アプリ側》Monaca のすごいところ__
+__Monaca のすごいところ__
 .size_small_7[
 * 無料で使える！
 * iOS / Android 同時に開発可能！
 * いつでもどこでも、ブラウザで開発OK！
-* **mBaaSのSDK導入** がクリックだけで簡単に！
+* **mobile backendのSDK導入** がクリックだけで簡単に！
 ]
 ]
 .right-column[
-__《サーバー側》mBaaS のすごいところ__
+__mobile backend  のすごいところ__
 .size_small_7[
 * 無料で使える！
 * **バックエンドの開発・運用は一切不要**！
 * データの保存はたった **３行** で実装可能！
-* **プッシュ通知** も簡単実装！
 * **コントロールパネル** からクラウドの状況をパッと確認できる！
 ]
 ]
@@ -123,24 +128,31 @@ __《サーバー側》mBaaS のすごいところ__
 .footnote_right[
 はじめに
 ]
+
 ## 今回習得できる内容
 ### リレーション・ポインタの使い方
 #### データの関連付け機能「リレーション（１対多）・ポインタ（１対１）」
+
+.size_small_9[
 * サンプルアプリを使って、顧客（会社）と社員（担当者）を紐付けした「顧客管理データ」を作成します
   * 保存や取得のコード解説を行います
-
+]
 .center[<img src="document-img/app_image_relation&pointer.png" alt="app_image" width="750px">]
 
 ---
 .footnote_right[
 はじめに
 ]
+
 ## 今回習得できる内容
 ### ロールによる管理ユーザーの作成方法
 #### 参照権限機能「会員ロール・ACL設定」
+
+.size_small_9[
 * サンプルアプリを使って、「管理ユーザー」の作成方法とその活用方法を学びます
 * 「顧客管理データ」読み書き権限設定の方法を紹介します
-  * mBaaS ダッシュボードから手動で設定する方法とコードで設定する方法について解説します
+  * mobile backend  管理画面から手動で設定する方法とコードで設定する方法について解説します
+]
 
 .center[<img src="document-img/app_image_role&acl.png" alt="app_image" width="500px">]
 
@@ -159,19 +171,17 @@ layout: false
 
 ### 事前準備
 下記登録を完了し、アカウントを作成しておいてください。
-* Monaca の利用登録（無料）
-  * https://ja.monaca.io/register/start.html
-* ニフティクラウド mobile backend ( mBaaS ) の利用登録（無料）
+* Monaca の利用登録（無料：Freeプランまたはトライアル）
+  * https://monaca.mobi/ja/signup
+* ニフクラ mobile backend の利用登録（無料：Basicプラン）
   * http://mb.cloud.nifty.com/signup.htm
 * ブラウザ Chrome 最新版
 
 ### 事前予備知識（知らなくてもOK）
 以下機能を利用しますが今回の内容に影響しないため、解説は割愛しています。
 
-* mBaaS データストアの基本処理（データの保存）
-  * http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_monaca.html#オブジェクトの保存
-* 会員管理 新規登録・ログイン・ログアウト処理（ID/PW認証）
-  * http://mb.cloud.nifty.com/doc/current/user/basic_usage_monaca.html
+* mobile backend データストアの基本（データの保存）は [こちら](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_monaca.html#オブジェクトの保存) を参照
+* 会員管理（ID/PWでの新規登録・ログイン・ログアウト）は [こちら](http://mb.cloud.nifty.com/doc/current/user/basic_usage_monaca.html) を参照
 
 ---
 .footnote_right[
@@ -181,19 +191,21 @@ layout: false
 ]
 
 ## 取り組み内容
+.size_small_9[
 * 今回はコーディング済みサンプルプロジェクトを利用します
 * コード実装以外に必要な設定や作業を完了させることで動作できるようになります
+]
 
 ### 1. 環境と連携の準備
-.size_large_13[
+.size_large_11[
 1. Monaca の準備
   * サンプルプロジェクトのインポート
-1. mBaaS の準備
+1. mobile backend の準備
   * アプリの新規作成
   * データ（会社・社員）のインポート
-1. Monaca で mBaaS を利用するための準備
-  * mBaaS JS SDK のインポート
-  * mBaaS JS SDK の初期化（mBaaS APIキーの読み込み）
+1. Monaca で mobile backend を利用するための準備
+  * mobile backend JS SDK のインポート
+  * mobile backend JS SDK の初期化（APIキーの読み込み）
 ]
 
 ---
@@ -206,16 +218,16 @@ layout: false
 ## 取り組み内容
 ### 2. 動作確認と解説
 
-.size_large_13[
+.size_large_11[
 1. インポートしたデータ（会社・社員）の表示確認
   * 新規登録・ログイン処理
   * データの検索取得処理
 1. 関連付けしたデータの登録と表示確認
   * 関連付けしたデータの保存・検索取得処理
-1. mBaaS ダッシュボード上で管理ユーザーを作成
+1. mobile backend 管理画面上で管理ユーザーを作成
 1. 各データの参照権限（ACL）設定確認
   * データ保存時のACL設定（jsonインポート）
-  * ダッシュボードでのACL設定
+  * 管理画面でのACL設定
   * データ保存時のACL設定（コード）
 1. 管理ユーザーでログイン・ボタンの表示確認
 1. データの削除と表示確認
@@ -231,29 +243,20 @@ layout: false
 ### 1.1. Monaca の準備
 #### サンプルプロジェクトのインポート
 
-* 下記リンクからサンプルプロジェクトをダウンロードしておきます
-  * https://github.com/natsumo/MonacaGyomuApp/archive/master.zip
-* Monacaにログインをします
-
-.center[<img src="document-img/Monaca_1.png" alt="Monaca_1" width="700px">]
-
-https://ja.monaca.io/
-
----
-.footnote_right[
-.right[
-ハンズオン<br>1.1. Monaca の準備
-]
-]
-
-<br>
+.left-column[
+.size_small_9[
 * プロジェクトをインポートします
-  * 「`Import Project`」をクリックします
-  * 「`プロジェクト名`」を入力します　例）.color_blue[__顧客管理アプリ__]
-  * 「`インポート方法`」は「`プロジェクトのパッケージをアップロード`」を選択し、先ほどダウンロードしておいた zipファイル を選択します
-  * プロジェクトが作成されたら、「`開く`」をクリックします
-
-.center[<img src="document-img/Monaca_2.png" alt="Monaca_2" width="700px">]
+  * 右記リンク先ページを開き「インポート」をクリックします
+ * プロジェクトがインポートされたら選択し、「クラウドIDEで開く」をクリックします
+]
+]
+.right-column[
+.size_large_15[
+<br>
+**https://goo.gl/ePeFvB**
+]
+]
+.center[<img src="document-img/Monaca_1.png" alt="Monaca_1" width="750px">]
 
 ---
 .footnote_right[
@@ -265,8 +268,8 @@ https://ja.monaca.io/
 * プロジェクトが開かれます
 * 次のように画面を設定すると動作確認しやすくなります
   * ① `js/app.js` ファイルを開きます（必須）
-  * ② クリックしてコンソールをしまいます（推奨）
-  * ③ プレビュー画面を `iPhone6` の `横向き` に設定します（推奨）
+  * ② コンソールは使用しないので小さくします（推奨）
+  * ③ プレビュー画面を `横向き` に設定します（推奨）
 
 .center[<img src="document-img/Monaca_3.png" alt="Monaca_3" width="700px">]
 
@@ -275,14 +278,14 @@ https://ja.monaca.io/
 ---
 .footnote_right[
 .right[
-ハンズオン<br>1.2. mBaaS の準備
+ハンズオン<br>1.2. mobile backend の準備
 ]
 ]
 
-### 1.2. mBaaS の準備
+### 1.2. mobile backend の準備
 #### アプリの新規作成
 
-* mBaaS にログインします
+* mobile backend にログインします
 
 .center[<img src="document-img/make_mb_app_0.png" alt="make_mb_app_0" width="700px">]
 
@@ -291,7 +294,7 @@ http://mb.cloud.nifty.com/
 ---
 .footnote_right[
 .right[
-ハンズオン<br>1.2. mBaaS の準備
+ハンズオン<br>1.2. mobile backend の準備
 ]
 ]
 
@@ -302,14 +305,14 @@ http://mb.cloud.nifty.com/
 .center[<img src="document-img/make_mb_app_2.PNG" alt="make_mb_app_2" width="450px">]
 
 
-* mBaaS を既に使用したことがある場合は、画面上方のメニューバーにある「`+新しいアプリ`」をクリックすると同じ画面が表示されます
+* mobile backend を既に使用したことがある場合は、画面上方のメニューバーにある「`+新しいアプリ`」をクリックすると同じ画面が表示されます
 
 .center[<img src="document-img/make_mb_app_1.PNG" alt="make_mb_app_1" width="150px">]
 
 ---
 .footnote_right[
 .right[
-ハンズオン<br>1.2. mBaaS の準備
+ハンズオン<br>1.2. mobile backend の準備
 ]
 ]
 
@@ -323,61 +326,67 @@ http://mb.cloud.nifty.com/
 ---
 .footnote_right[
 .right[
-ハンズオン<br>2. mBaaS準備
+ハンズオン<br>1.2. mobile backend の準備
 ]
 ]
 
 <br>
-* ダッシュボードが表示されます
+* 管理画面が表示されます
 
 .center[<img src="document-img/make_mb_app_4.PNG" alt="make_mb_app_4" width="700px">]
 
 ---
 .footnote_right[
 .right[
-ハンズオン<br>1.2. mBaaS の準備
+ハンズオン<br>1.2. mobile backend の準備
 ]
 ]
 
 #### データ（会社・社員）のインポート
-* 最初にダウンロードしたサンプルプロジェクトを解凍します
-* 「`Settings`」フォルダ内「 `DEMO_Company_5.json` 」と「 `DEMO_Employee_10.json` 」を次の手順でインポートします
+* データファイルを以下のURLからダウンロードし、zipファイルを解凍します
 
-.center[<img src="document-img/pjct_files.PNG" alt="pjct_files" width="500px">]
+.size_large_15[
+.center[
+<!-- MonacaGyomuApp_Settings.zip -->
+**https://goo.gl/Zzs6a3**
+]
+]
+
+* 「`MonacaGyomuApp_Settings`」フォルダ内、以下のファイルを mobile backend 同様にもう１つもインポートします
+  *  `DEMO_Company_5.json`
+  *  `DEMO_Employee_10.json`
+
+.center[<img src="document-img/pjct_files.PNG" alt="pjct_files" width="300px">]
 
 ---
 .footnote_right[
 .right[
-ハンズオン<br>1.2. mBaaS の準備
+ハンズオン<br>1.2. mobile backend の準備
 ]
 ]
 
 #### データ（会社・社員）のインポート
-* ダッシュボードで「`データストア`」を開き、`＋作成▼` ＞ `インポート` をクリックします
+* 管理画面で「`データストア`」を開き、`＋作成▼` ＞ `インポート` をクリックします
 
 .center[<img src="document-img/make_datastore_class_1.PNG" alt="make_datastore_class_1" width="450px">]
 
 ---
 .footnote_right[
 .right[
-ハンズオン<br>1.2. mBaaS の準備
+ハンズオン<br>1.2. mobile backend の準備
 ]
 ]
 
 #### データ（会社・社員）のインポート
 * １つずつインポートします
-* 次のようにクラス名を入力してファイルを選択し「 `インポート` 」をクリックします
+* それぞれ以下のようにクラス名を設定し、ファイルを選択して「 `インポート` 」をクリックします
 
-.center[<img src="document-img/make_datastore_class_2.PNG" alt="make_datastore_class_2" width="350px">]
-
-* 同様にもう１つもインポートします
-
-.center[<img src="document-img/make_datastore_class_3.PNG" alt="make_datastore_class_3" width="350px">]
+.center[<img src="document-img/make_datastore_class_2.PNG" alt="make_datastore_class_2" width="700px">]
 
 ---
 .footnote_right[
 .right[
-ハンズオン<br>1.2. mBaaS の準備
+ハンズオン<br>1.2. mobile backend の準備
 ]
 ]
 
@@ -388,18 +397,18 @@ http://mb.cloud.nifty.com/
 
 * 図は `Company` クラスが選択され表示されている状態です
 
-<br><br><br>これで mBaaS の準備は完了です。
+<br><br><br>これで mobile backend の準備は完了です。
 
 ---
 .footnote_right[
 .right[
-ハンズオン<br>1.3. Monaca で mBaaS を利用するための準備
+ハンズオン<br>1.3. Monaca で mobile backend を利用するための準備
 ]
 ]
 
-### 1.3. Monaca で mBaaS を利用するための準備
-#### mBaaS JS SDK のインポート
-* `設定` ＞ `JS/CSSコンポーネントの追加と削除` をクリックます
+### 1.3. Monaca で mobile backend を利用するための準備
+#### mobile backend JS SDK のインポート
+* Monaca を開き `設定` ＞ `JS/CSSコンポーネントの追加と削除` をクリックます
 * 右上の「 `コンポーネント名` 」に「 `ncmb` 」と入力して検索します
 
 .center[<img src="document-img/add_js_sdk_1.PNG" alt="add_js_sdk_1" width="700px">]
@@ -407,11 +416,11 @@ http://mb.cloud.nifty.com/
 ---
 .footnote_right[
 .right[
-ハンズオン<br>1.3. Monaca で mBaaS を利用するための準備
+ハンズオン<br>1.3. Monaca で mobile backend を利用するための準備
 ]
 ]
 
-#### mBaaS JS SDK のインポート
+#### mobile backend JS SDK のインポート
 * 追加をクリックします
 
 .center[<img src="document-img/add_js_sdk_2.PNG" alt="add_js_sdk_2" width="600px">]
@@ -423,11 +432,11 @@ http://mb.cloud.nifty.com/
 ---
 .footnote_right[
 .right[
-ハンズオン<br>1.3. Monaca で mBaaS を利用するための準備
+ハンズオン<br>1.3. Monaca で mobile backend を利用するための準備
 ]
 ]
 
-#### mBaaS JS SDK のインポート
+#### mobile backend JS SDK のインポート
 * チェックを入れ `保存する` をクリックします
 
 .center[<img src="document-img/add_js_sdk_4.PNG" alt="add_js_sdk_4" width="300px">]
@@ -439,32 +448,48 @@ http://mb.cloud.nifty.com/
 ---
 .footnote_right[
 .right[
-ハンズオン<br>1.3. Monaca で mBaaS を利用するための準備
+ハンズオン<br>1.3. Monaca で mobile backend を利用するための準備
 ]
 ]
 
-### 1.3. Monaca で mBaaS を利用するための準備
-#### mBaaS JS SDK の初期化（mBaaS APIキーの読み込み）
-* `js/app.js` を開きます
-* 1 ～ 6 行目を見てください
+### 1.3. Monaca で mobile backend を利用するための準備
+#### mobile backend JS SDK の初期化（APIキーの読み込み）
+* Monaca で `js/app.js` を開き、1～6行目を見てください
 
 .center[<img src="document-img/js_sdk_initialize_1.PNG" alt="js_sdk_initialize_1" width="550px">]
 
-* 2 ～ 3 行目の `YOUR_NCMB_APPLICATION_KEY` と `YOUR_NCMB_CLIENT_KEY` を mBaaS でアプリ作成時に発行された２つの APIキー （アプリケーションキーとクライアントキー）に貼り替えます
-* APIキー を設定することで、6 行目で mBaaS SDK の初期化が実行できます
-  * `NCMB` は mBaaS SDK を表しています
+* 2～3行目の `[NCMB] APIキーの設定` を編集します
+  * `YOUR_NCMB_***` の部分をそれぞれ mobile backend でアプリ作成時に発行された２つの APIキー （アプリケーションキーとクライアントキー）に貼り替えます
+* APIキー を設定することで、6行目で SDK の初期化が実行され SDK が利用可能になります
 
 ---
 .footnote_right[
 .right[
-ハンズオン<br>1.3. Monaca で mBaaS を利用するための準備
+ハンズオン<br>1.3. Monaca で mobile backend を利用するための準備
 ]
 ]
 
-#### mBaaS JS SDK の初期化（mBaaS APIキーの読み込み）
-* mBaaS の APIキー は `アプリ設定` で確認できます
+#### mobile backend JS SDK の初期化（APIキーの読み込み）
+* mobile backend の APIキー は `アプリ設定` で確認できます
 
 .center[<img src="document-img/js_sdk_initialize_2.PNG" alt="js_sdk_initialize_2" width="700px">]
+
+---
+.footnote_right[
+.right[
+ハンズオン<br>1.3. Monaca で mobile backend を利用するための準備
+]
+]
+
+#### mobile backend JS SDK の初期化（APIキーの読み込み）
+* こんな感じに設定できていればOK
+
+.center[<img src="document-img/js_sdk_initialize_3.PNG" alt="js_sdk_initialize_3" width="700px">]
+
+* 最後に必ず保存をしましょう
+* 以下のいずれかの方法で保存ができます
+  * 「`ファイル`」＞「`保存`」をクリック
+  * Windowsの場合は「Ctrl + S」キー、Macの場合は「Command + S」
 
 準備はすべて完了です
 
@@ -477,8 +502,7 @@ http://mb.cloud.nifty.com/
 
 ### 2.1. インポートしたデータ（会社・社員）の表示確認
 #### 新規登録・ログイン処理
-Monaca のプレビュー画面で動作確認をします
-
+* Monaca のプレビュー画面で動作確認をします
 * 後ほど権限管理を行うためログイン機能を実装しています
  * ここでは解説はしません
 * `登録` ボタンを押して、新規登録画面からアカウントを作成します
@@ -521,7 +545,7 @@ Monaca のプレビュー画面で動作確認をします
 ]
 #### データの検索取得処理
 * 会社一覧がリストで表示されるようになっています
-* これは「1.2. mBaaS の準備」で mBaaS にインポートした、`Company` クラスのデータを取得してアプリに表示しています
+* これは「1.2. mobile backend の準備」で mobile backend にインポートした、`Company` クラスのデータを取得してアプリに表示しています
 
 .center[<img src="document-img/app_image_02.PNG" alt="app_image_02" width="500px">]
 
@@ -658,7 +682,7 @@ employee.order('employeeNumber')
 
 ### 2.2. 関連付けしたデータの登録と表示確認
 #### 関連付けしたデータの保存・検索取得処理
-mBaaS に登録したデータを関連付けして、顧客管理をしてみましょう！
+mobile backend に登録したデータを関連付けして、顧客管理をしてみましょう！
 
 * 各顧客（会社）に担当者（社員）をアサインした一覧表を作成します
 * トップ画面に戻って右下の新規顧客登録を選択します
@@ -716,7 +740,7 @@ mBaaS に登録したデータを関連付けして、顧客管理をしてみ�
 
 .center[<img src="document-img/app_image_09.PNG" alt="app_image_09" width="500px">]
 
-* `登録する` ボタンを押すと顧客管理データが mBaaS に保存されます
+* `登録する` ボタンを押すと顧客管理データが mobile backend に保存されます
 
 ---
 .footnote_right[
@@ -726,14 +750,18 @@ mBaaS に登録したデータを関連付けして、顧客管理をしてみ�
 ]
 
 #### 関連付けしたデータの保存・検索取得処理
+.size_small_9[
 * トップ画面に遷移します
 * 登録した顧客管理データが表示されます
+]
 
 .center[<img src="document-img/app_image_10.PNG" alt="app_image_10" width="500px">]
 
-* これは、ローカルストレージのデータではなく、 mBaaS に保存したデータを取得して表示しています
-  * 例えば他の端末からデータのアップロードがあった場合にも `更新` ボタンを押すと mBaaS と同期することができます
+.size_small_9[
+* データはローカルストレージではなく、mobile backend に保存・取得しています
+  * `更新` ボタンを押すと mobile backend と同期することができます
 * 一覧から項目を選択すると、`備考` に入力した値が アラートで表示されることが確認できます
+]
 
 ---
 .footnote_right[
@@ -743,15 +771,17 @@ mBaaS に登録したデータを関連付けして、顧客管理をしてみ�
 ]
 
 #### 関連付けしたデータの保存・検索取得処理
-どのようにデータが保存されたか、mBaaS を確認してみましょう！
+どのようにデータが保存されたか、mobile backend を確認してみましょう！
 
-* ダッシュボードからデータストアを確認します
+.size_small_9[
+* 管理画面からデータストアを確認します
 * 新しく `Customer` クラスが作成されたことが確認できます
-
+]
 .center[<img src="document-img/app_image_20.PNG" alt="app_image_20" width="750px">]
-
+.size_small_9[
 * 顧客管理データはコピーされて保存されているわけではなく、既存データを関連付けしたデータを作成しています
 * `company` フィールドに選択した顧客（会社）が、`employee` フィールドに選択した担当者（社員）がそれぞれ「ポインタ」と「リレーション」として設定されています
+]
 
 ---
 .footnote_right[
@@ -787,28 +817,21 @@ mBaaS に登録したデータを関連付けして、顧客管理をしてみ�
 ]
 
 #### 関連付けしたデータの保存・検索取得処理
+.size_small_9[
 * 保存処理は `js/app.js` の 171行目 `新規顧客登録フォーム「登録する」ボタン押下時の処理` 以下に記載があります
+]
 
-ポインタの作成
+**ポインタの作成**
 ```js
 // [NCMB] Company クラスを生成
 var Company = ncmb.DataStore('Company');
 /*** [NCMB] ポインタデータの作成 ***/
 var pointer = new Company({"objectId": companySelectVal});
 ```
-* `companySelectVal` は選択した顧客（会社）の `objectId`
 
-リレーションの作成
-```js
-// [NCMB] Employee クラスを生成
-var Employee = ncmb.DataStore('Employee');
-/*** [NCMB] リレーションデータの作成 ***/
-var relation = new ncmb.Relation();
-// [NCMB] リレーションにオブジェクトを設定
-relation.add(new Employee({"objectId": employeeSelect_0}));  /* 複数設定可 */
-```
-* `employeeSelect_0` は選択した担当者（社員）の `objectId`
-* 複数設定する場合は同様に、 `objectId` 設定し、 `add` することで設定できます
+.size_small_9[
+* `companySelectVal` は選択した顧客（会社）の `objectId`
+]
 
 ---
 .footnote_right[
@@ -818,10 +841,37 @@ relation.add(new Employee({"objectId": employeeSelect_0}));  /* 複数設定可 
 ]
 
 #### 関連付けしたデータの保存・検索取得処理
+
+**リレーションの作成**
+```js
+// [NCMB] Employee クラスを生成
+var Employee = ncmb.DataStore('Employee');
+/*** [NCMB] リレーションデータの作成 ***/
+var relation = new ncmb.Relation();
+// [NCMB] リレーションにオブジェクトを設定
+relation.add(new Employee({"objectId": employeeSelect_0}));  /* 複数設定可 */
+```
+
+.size_small_9[
+* `employeeSelect_0` は選択した担当者（社員）の `objectId`
+* 複数設定する場合は同様に、 `objectId` 設定し、 `add` することで設定できます
+]
+
+---
+.footnote_right[
+.right[
+ハンズオン<br>2.2. 関連付けしたデータの登録と表示確認
+]
+]
+
+#### 関連付けしたデータの保存・検索取得処理
+.size_small_9[
 * 作成した「ポインタ」、「リレーション」情報を設定し保存処理をします
   * 一般的な保存処理と同様です
+]
 
-関連付けされたデータの保存
+**関連付けされたデータの保存**
+
 ```js
 // [NCMB] Customer クラスを生成
 var Customer = ncmb.DataStore('Customer');
@@ -841,8 +891,10 @@ customer.set('company', pointer) /** ポインタ **/
 
         });
 ```
+.size_small_9[
 * `set` : 値の設定
 * `save` : 保存処理
+]
 
 ---
 .footnote_right[
@@ -957,21 +1009,22 @@ function getRelationEmployeeData(int) {
 }
 ```
 
+.size_small_9[
 * `relatedTo(データ, 'フィールド名')` : <br>【検索条件】指定データの指定フィールドに設定されたリレーションの参照先データを含む
 
 データの関連付けは以上です。<br>次は権限管理の方法を学びましょう！
-
+]
 ---
 .footnote_right[
 .right[
-ハンズオン<br>2.3. mBaaS ダッシュボード上で管理ユーザーを作成
+ハンズオン<br>2.3. mobile backend 管理画面上で管理ユーザーを作成
 ]
 ]
 
-### 2.3. mBaaS ダッシュボード上で管理ユーザーを作成
+### 2.3. mobile backend 管理画面上で管理ユーザーを作成
 管理者グループとして、「管理者ロール」を作成します
 
-* mBaaS ダッシュボードを開きます
+* mobile backend 管理画面を開きます
 * `会員管理` ＞ `+編集▼` ＞ `ロールの作成` をクリックします
 
 .center[<img src="document-img/app_image_11.PNG" alt="app_image_11" width="500px">]
@@ -979,7 +1032,7 @@ function getRelationEmployeeData(int) {
 ---
 .footnote_right[
 .right[
-ハンズオン<br>2.3. mBaaS ダッシュボード上で管理ユーザーを作成
+ハンズオン<br>2.3. mobile backend 管理画面上で管理ユーザーを作成
 ]
 ]
 <br><br>
@@ -995,7 +1048,7 @@ function getRelationEmployeeData(int) {
 ---
 .footnote_right[
 .right[
-ハンズオン<br>2.3. mBaaS ダッシュボード上で管理ユーザーを作成
+ハンズオン<br>2.3. mobile backend 管理画面上で管理ユーザーを作成
 ]
 ]
 <br><br>
@@ -1009,7 +1062,7 @@ function getRelationEmployeeData(int) {
 ---
 .footnote_right[
 .right[
-ハンズオン<br>2.3. mBaaS ダッシュボード上で管理者ユーザーを作成
+ハンズオン<br>2.3. mobile backend 管理画面上で管理者ユーザーを作成
 ]
 ]
 <br><br>
@@ -1022,7 +1075,7 @@ function getRelationEmployeeData(int) {
 ---
 .footnote_right[
 .right[
-ハンズオン<br>2.3. mBaaS ダッシュボード上で管理者ユーザーを作成
+ハンズオン<br>2.3. mobile backend 管理画面上で管理者ユーザーを作成
 ]
 ]
 <br>
@@ -1054,7 +1107,7 @@ function getRelationEmployeeData(int) {
   * 個別ユーザーに権限を設定する場合と比べ、一括で管理が可能なため、権限設定・解除をし易くすることができます！
 * 次のページでデータへの権限設定方法を３つご案内していきます
   * データ保存時のACL設定（jsonインポート）
-  * ダッシュボードでのACL設定
+  * 管理画面でのACL設定
   * データ保存時のACL設定（コード）
 
 ]
@@ -1066,7 +1119,7 @@ function getRelationEmployeeData(int) {
 ]
 ]
 #### データ保存時のACL設定（jsonインポート）
-* json ファイルを使って mBaaS にデータをインポートする際にデータに権限付与が可能です
+* json ファイルを使って mobile backend にデータをインポートする際にデータに権限付与が可能です
 * ダウンロードしたプロジェクト内 `Setting` ＞ `DEMO_Company_5.json` を開いてみましょう
 
 ```json
@@ -1094,8 +1147,8 @@ function getRelationEmployeeData(int) {
 ハンズオン<br>2.4. 各データの参照権限（ACL）設定確認
 ]
 ]
-#### ダッシュボードでのACL設定
-* ダッシュボードで権限設定を確認してみましょう
+#### 管理画面でのACL設定
+* 管理画面で権限設定を確認してみましょう
 * `データストア` ＞ `Company` クラス を選択し、一番右までスクロールします
 * `acl` フィールドの `パーミッション編集` をクリックします
 
@@ -1107,9 +1160,9 @@ function getRelationEmployeeData(int) {
 ハンズオン<br>2.4. 各データの参照権限（ACL）設定確認
 ]
 ]
-#### ダッシュボードでのACL設定
+#### 管理画面でのACL設定
 * 設定されていることが確認できます
-* 直接ダッシュボードから権限の編集が可能です
+* 直接管理画面から権限の編集が可能です
 
 .center[<img src="document-img/app_image_24.PNG" alt="app_image_24" width="400px">]
 
@@ -1244,8 +1297,6 @@ customer.set('company', pointer)
             });
 ```
 
-* `equalTo('フィールド名', 値)` : 【検索条件】フィールドに値が一致する
-* `fetch()` : １件検索
 * `delete()` : 削除
 
 ---
@@ -1268,9 +1319,9 @@ customer.set('company', pointer)
 
 ]
 
-<br><br><br><br><br>
+<br><br><br>
 などなど...
-mBaaS の活用の幅は広がりましたでしょうか？？
+mobile backend の活用の幅は広がりましたでしょうか？？
 今後のアプリ開発の参考にしていただけたら幸いです\\('▼'\*)/！
 
 ---
@@ -1289,16 +1340,16 @@ layout: false
 ]
 
 ## おわりに
-使いやすくて便利な mBaaS をもっと活用してみたい方へ、mBaaSの各機能をすぐに試すことができるサンプルアプリを多数ご用意しています。Monacaにサンプルプロジェクトをインポートして、簡単な操作をするだけですぐにお試しいただけます！ぜひご活用ください。
+使いやすくて便利な mobile backend をもっと活用してみたい方へ、mobile backend の各機能をすぐに試すことができるサンプルアプリを多数ご用意しています。Monaca にサンプルプロジェクトをインポートして、簡単な操作をするだけですぐにお試しいただけます！ぜひご活用ください。
 
 .size_large_11[
-* [mobile backend を体験しよう！](https://github.com/NIFTYCloud-mbaas/monaca_data_registration)
+* [mobile backend を体験しよう！](https://github.com/NIFCloud-mbaas/monaca_data_registration)
  * 使用機能 / データストア
-* [アプリにログイン機能をつけよう！](https://github.com/NIFTYCloud-mbaas/monaca_login_template)
+* [アプリにログイン機能をつけよう！](https://github.com/NIFCloud-mbaas/monaca_login_template)
  * 使用機能 / 会員管理
-* [アプリにプッシュ通知を組み込もう！](https://github.com/NIFTYCloud-mbaas/MonacaPushApp)
+* [アプリにプッシュ通知を組み込もう！](https://github.com/NIFCloud-mbaas/MonacaPushApp)
  * 使用機能 / プッシュ通知
-* [地図アプリを作ろう！](https://github.com/NIFTYCloud-mbaas/MonacaMapApp)
+* [地図アプリを作ろう！](https://github.com/NIFCloud-mbaas/MonacaMapApp)
  * 使用機能 / データストア,位置情報検索
 * [and more...](http://mb.cloud.nifty.com/doc/current/tutorial/tutorial_monaca.html)
 ]
