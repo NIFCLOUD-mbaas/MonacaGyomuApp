@@ -183,6 +183,11 @@ layout: false
 * Xcode: ver.11.4 
 * MacOS: ver.10.15.4 
 
+---
+layout: true
+class: center, middle, inverse_sub
+---
+
 ### 事前予備知識（知らなくてもOK）
 以下機能を利用しますが今回の内容に影響しないため、解説は割愛しています。
 
