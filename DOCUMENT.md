@@ -1334,13 +1334,6 @@ mobile backend の活用の幅は広がりましたでしょうか？？
 layout: true
 class: center, middle, inverse_sub
 ---
-# 参考
-
-* PodファイルのInstall方法
-    1. ターミナルを開き
-    2. cd <project> フォルダ
-    3. `pod install`で実施 
-    4. `<app>.xcworkspace`を開き
 
 # おわりに
 
