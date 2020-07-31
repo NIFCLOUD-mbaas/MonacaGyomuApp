@@ -184,9 +184,6 @@ layout: false
 * MacOS: ver.10.15.4 
 
 ---
-layout: true
-class: center, middle, inverse_sub
----
 
 ### 事前予備知識（知らなくてもOK）
 以下機能を利用しますが今回の内容に影響しないため、解説は割愛しています。
@@ -254,20 +251,13 @@ class: center, middle, inverse_sub
 ### 1.1. Monaca の準備
 #### サンプルプロジェクトのインポート
 
-.left-column[
-.size_small_9[
 * プロジェクトをインポートします
-  * 右記リンク先ページを開き「インポート」をクリックします
- * プロジェクトがインポートされたら選択し、「クラウドIDEで開く」をクリックします
-]
-]
-.right-column[
-.size_large_15[
-<br>
-**https://goo.gl/ePeFvB**
-]
-]
-.center[<img src="document-img/Monaca_1.png" alt="Monaca_1" width="750px">]
+  * [Monaca](https://ja.monaca.io) にログインし、「インポート」をクリックします
+  * 「インポート方法」で「URL」をクリックします
+.center[<img src="document-img/006_01.png" alt="import_project" width="400px">]
+  * 下記URLをコピーして貼り付けます  
+  https://github.com/NIFCLOUD-mbaas/MonacaGyomuApp.git
+* プロジェクトがインポートされたら「開く」をクリックします
 
 ---
 .footnote_right[
