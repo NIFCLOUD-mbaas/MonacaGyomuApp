@@ -88,7 +88,7 @@ mobile backendではユーザーをグルーピングするロールという機
 ### ニフクラ mobile backend
 
 .left-column[
-* __にふくら-もばいる-ばっくえんど 【[ニフクラ mobile backend](http://mb.cloud.nifty.com/about.htm)】__ スマートフォンアプリに必要なバックエンド機能が開発不要で利用できるクラウドサービス。 クラウド上に用意された機能をAPIで呼び出すだけで利用できます。また、APIを簡単に使うためのSDKを用意しています（ iOS / Android / Monaca / Unity ）。mobile Backend as a Service の頭文字を取って、通称 **mBaaS** 呼ばれます。
+* __にふくら-もばいる-ばっくえんど 【[ニフクラ mobile backend](https://mbaas.nifcloud.com/about.htm)】__ スマートフォンアプリに必要なバックエンド機能が開発不要で利用できるクラウドサービス。 クラウド上に用意された機能をAPIで呼び出すだけで利用できます。また、APIを簡単に使うためのSDKを用意しています（ iOS / Android / Monaca / Unity ）。mobile Backend as a Service の頭文字を取って、通称 **mBaaS** 呼ばれます。
 ]
 
 .right-column[
@@ -174,14 +174,22 @@ layout: false
 * Monaca の利用登録（無料：Freeプランまたはトライアル）
   * https://monaca.mobi/ja/signup
 * ニフクラ mobile backend の利用登録（無料：Basicプラン）
-  * http://mb.cloud.nifty.com/signup.htm
+  * https://mbaas.nifcloud.com/signup.htm
 * ブラウザ Chrome 最新版
+
+#### 動作環境
+* iOS: OS ver.10.0 ~ ver.13.4
+* 端末: iphone 8 (13.4)
+* Xcode: ver.11.4 
+* MacOS: ver.10.15.4 
+
+---
 
 ### 事前予備知識（知らなくてもOK）
 以下機能を利用しますが今回の内容に影響しないため、解説は割愛しています。
 
-* mobile backend データストアの基本（データの保存）は [こちら](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_monaca.html#オブジェクトの保存) を参照
-* 会員管理（ID/PWでの新規登録・ログイン・ログアウト）は [こちら](http://mb.cloud.nifty.com/doc/current/user/basic_usage_monaca.html) を参照
+* mobile backend データストアの基本（データの保存）は [こちら](https://mbaas.nifcloud.com/doc/current/datastore/basic_usage_monaca.html#オブジェクトの保存) を参照
+* 会員管理（ID/PWでの新規登録・ログイン・ログアウト）は [こちら](https://mbaas.nifcloud.com/doc/current/user/basic_usage_monaca.html) を参照
 
 ---
 .footnote_right[
@@ -243,20 +251,13 @@ layout: false
 ### 1.1. Monaca の準備
 #### サンプルプロジェクトのインポート
 
-.left-column[
-.size_small_9[
 * プロジェクトをインポートします
-  * 右記リンク先ページを開き「インポート」をクリックします
- * プロジェクトがインポートされたら選択し、「クラウドIDEで開く」をクリックします
-]
-]
-.right-column[
-.size_large_15[
-<br>
-**https://goo.gl/ePeFvB**
-]
-]
-.center[<img src="document-img/Monaca_1.png" alt="Monaca_1" width="750px">]
+  * [Monaca](https://ja.monaca.io) にログインし、「インポート」をクリックします
+  * 「インポート方法」で「URL」をクリックします
+.center[<img src="document-img/006_01.png" alt="import_project" width="400px">]
+  * 下記URLをコピーして貼り付けます  
+  https://github.com/NIFCLOUD-mbaas/MonacaGyomuApp.git
+* プロジェクトがインポートされたら「開く」をクリックします
 
 ---
 .footnote_right[
@@ -289,7 +290,7 @@ layout: false
 
 .center[<img src="document-img/make_mb_app_0.png" alt="make_mb_app_0" width="700px">]
 
-http://mb.cloud.nifty.com/
+https://mbaas.nifcloud.com
 
 ---
 .footnote_right[
@@ -299,8 +300,8 @@ http://mb.cloud.nifty.com/
 ]
 
 <br>
-* 新しいアプリを作成します
-* アプリ名を入力し「`新規作成`」をクリックします　例）.color_blue[__CustomerManage__]
+* 新しいアプリを作成します    
+* アプリ名を入力し「`新規作成`」をクリックします 例）.color_blue[__CustomerManage__]
 
 .center[<img src="document-img/make_mb_app_2.PNG" alt="make_mb_app_2" width="450px">]
 
@@ -318,7 +319,7 @@ http://mb.cloud.nifty.com/
 
 <br><br>
 * アプリが作成されるとAPIキー（２種類）が発行されます
- * APIキーは後で使用します。
+  * APIキーは後で使用します。
 * ここでは使用しないので、「OK」で閉じます
 
 .center[<img src="document-img/make_mb_app_3.PNG" alt="make_mb_app_3" width="500px">]
@@ -504,7 +505,7 @@ http://mb.cloud.nifty.com/
 #### 新規登録・ログイン処理
 * Monaca のプレビュー画面で動作確認をします
 * 後ほど権限管理を行うためログイン機能を実装しています
- * ここでは解説はしません
+  * ここでは解説はしません
 * `登録` ボタンを押して、新規登録画面からアカウントを作成します
 
 .center[<img src="document-img/user_login_1.PNG" alt="user_login_1" width="500px">]
@@ -1328,6 +1329,7 @@ mobile backend の活用の幅は広がりましたでしょうか？？
 layout: true
 class: center, middle, inverse_sub
 ---
+
 # おわりに
 
 ---
@@ -1351,7 +1353,7 @@ layout: false
  * 使用機能 / プッシュ通知
 * [地図アプリを作ろう！](https://github.com/NIFCloud-mbaas/MonacaMapApp)
  * 使用機能 / データストア,位置情報検索
-* [and more...](http://mb.cloud.nifty.com/doc/current/tutorial/tutorial_monaca.html)
+* [and more...](https://mbaas.nifcloud.com/doc/current/tutorial/tutorial_javascript.html#/JavaScript/)
 ]
 
 ---
